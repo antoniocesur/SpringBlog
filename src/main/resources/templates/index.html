@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Mi blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
     <header>
-        <h1>El Gran blog de DAM/DAW</h1>
+        <h1 class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl">El Gran blog de DAM/DAW</h1>
     </header>
     <main>
         <div class="row" th:each="entrada:${lista}">
-            <h2 th:text="${entrada.titulo}"></h2>
+            <h2 th:text="${entrada.titulo}" class="flex flex-col shadow my-4 text-2xl text-blue-800"></h2>
             <h5 class="col" th:text="${entrada.fecha}"></h5>
             <div class="col" th:utext="${entrada.titulo}"></div>
         </div>
