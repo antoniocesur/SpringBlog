@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir y modificar Entradas</title>
+</head>
+<body>
+  <form action="" method="post" th:object="${entrada}" enctype="multipart/form-data">
+      <label for="titulo">Título</label>
+      <input type="text" th:field="*{titulo}" name="titulo" id="titulo">
+      <label for="contenido">Contenido</label>
+      <textarea th:field="*{contenido}" name="contenido" id="contenido"></textarea>
+      <input type="submit" value="Enviar">
+  </form>
+
+</body>
+</html>
