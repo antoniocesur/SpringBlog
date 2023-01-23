@@ -22,11 +22,11 @@ public class NotasApplication {
 	@Bean
 	CommandLineRunner baseDeDatos(){
 		return args -> {
-			Entrada entrada=new Entrada();
-			entrada.setTitulo("La noticia del día en DAW");
-			entrada.setContenido("La clase ha estado totalmente en silencio durante 3 segundos y 4 décimas, récord del presente año");
-			entrada.setFecha(LocalDate.now());
-			servicio.save(entrada);
+			Entrada entrada1=new Entrada();
+			entrada1.setTitulo("La noticia del día en DAW");
+			entrada1.setContenido("La clase ha estado totalmente en silencio durante 3 segundos y 4 décimas, récord del presente año");
+			entrada1.setFecha(LocalDate.now());
+			servicio.save(entrada1);
 
 			Entrada entrada2=new Entrada();
 			entrada2.setTitulo("La noticia del año en DAM");
@@ -35,10 +35,11 @@ public class NotasApplication {
 			servicio.save(entrada2);
 
 			for(int i=0; i<50; i++){
-				Entrada entrada1=new Entrada();
-				entrada2.setTitulo("La noticia " + (i+3));
-				entrada2.setContenido("Esta es la noticia número " + (i+3));
-				entrada2.setFecha(LocalDate.now().minusDays(i));
+				Entrada entrada=new Entrada();
+				entrada.setTitulo("La noticia " + (i+3));
+				entrada.setContenido("Esta es la noticia número " + (i+3));
+				entrada.setFecha(LocalDate.now().minusDays(i));
+				servicio.save(entrada);
 			}
 
 		};
