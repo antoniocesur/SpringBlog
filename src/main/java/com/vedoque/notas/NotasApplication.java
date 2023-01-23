@@ -34,6 +34,13 @@ public class NotasApplication {
 			entrada2.setFecha(LocalDate.now().minusDays(1));
 			servicio.save(entrada2);
 
+			for(int i=0; i<50; i++){
+				Entrada entrada1=new Entrada();
+				entrada2.setTitulo("La noticia " + (i+3));
+				entrada2.setContenido("Esta es la noticia número " + (i+3));
+				entrada2.setFecha(LocalDate.now().minusDays(i));
+			}
+
 		};
 	}
 
