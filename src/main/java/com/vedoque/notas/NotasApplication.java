@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 @SpringBootApplication
@@ -16,6 +17,11 @@ public class NotasApplication {
 	ServicioEntradas servicio;
 
 	public static void main(String[] args) {
+		try{
+			Process process = Runtime.getRuntime().exec("C:\\xampp\\mysql\\bin\\mysqld.exe");
+		}catch (IOException e){
+			e.printStackTrace();
+		}
 		SpringApplication.run(NotasApplication.class, args);
 	}
 
